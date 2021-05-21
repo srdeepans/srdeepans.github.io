@@ -42,6 +42,7 @@
 	}
 	.future-event-section {
 		display: inline-block;
+		text-align: center;
 	}
 	.slideshow-container {
 		/*padding: 73px 64px;*/
