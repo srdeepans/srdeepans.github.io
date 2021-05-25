@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<style type="text/css">
+	*{
+		font-family: Sans-serif;
+	}
+	th{
+		text-align: left;
+	}
+	input[type="number" i]{
+		width: -webkit-fill-available;
+	    padding: 4px 5px;
+	    text-align: center;
+	    color: red;
+	    font-weight: bold;
+	    font-size: 16px;
+	    box-shadow: inset 0px 0px 4px 0px #002240;
+	    border: none;
+	    border-radius: 6px;
+	}
+	input::-webkit-outer-spin-button,
+	input::-webkit-inner-spin-button {
+	  	-webkit-appearance: none;
+	  	margin: 0;
+	}
+	input[type=number] {
+	  	-moz-appearance: textfield;
+	}
+	.main-box {
+	    width: 100%;
+	    background: #0089ff24;
+	    border: 1px solid #0089ff;
+	    box-shadow: inset 0px 0px 12px 3px #0089ff;
+	    border-radius: 5px;
+	    padding: 28px;
+	}
+	.box1, .box2, td, th {
+    	width: 50%;
+	}
+	th{
+		padding: 7px 11px;
+	}
+	.box2 td{
+		padding: 0 20px;
+	    box-shadow: -3px 0px 5px 0px #0089ff;
+	    border: 1px;
+	    font-weight: 900;
+	    color: #0a9e00;
+	    border-radius: 5px;
+	}
+	tr.main-head{
+		color: #fff;
+	    font-size: 26px;
+	    padding-bottom: 89px;
+	}
+</style>
+<body>
+	<table class="main-box">
+	<tr class="main-head">
+		<th>Input</th>
+		<th>Output</th>
+	</tr>
+	  <tr>
+	  	<!-- Input area -->
+	    <td class="box1">
+	      <form name="calcForm" id="calcForm">
+	      	<table>
+	      		<tr>
+	      			<th>Current time to Hire</th>
+	      			<td><input type="number" name="currentHire" id="ct" min="1" max="180" value="" placeholder="Enter current time to hire"></td>
+	      		</tr>
+
+	      		<tr>
+	      			<th>Annual Hiring</th>
+	      			<td><input type="number" name="annualHire" id="ah" min="1" max="100000" value="" placeholder="Enter Annual Hiring here"></td>
+	      		</tr>
+
+	      		<tr>
+	      			<th>No. of Candidates Interview/Role</th>
+	      			<td><input type="number" name="candidateInterview" id="nc" min="1" max="50" value="" placeholder="Enter number of Candidates"></td>
+	      		</tr>
+	      	</table>	        
+	      </form>
+	    </td>
+	    <!-- Output area -->
+	    <td class="box2">
+	    	<table>
+	    		<tr>
+	    			<th>Total Panel Savings</th>
+	    			<td><span id="tps"></span></td>
+	    		</tr>
+
+	    		<tr>
+	    			<th>Total Panel Cost Savings</th>
+	    			<td><span id="tpcs"></span></td>
+	    		</tr>
+
+	    		<tr>
+	    			<th>Total Recruiter Time Savings</th>
+	    			<td><span id="trts"></span></td>
+	    		</tr>
+
+	    		<tr>
+	    			<th>Total Recruiter Cost Savings</th>
+	    			<td><span id="trcs"></span></td>
+	    		</tr>
+
+	    		<tr>
+	    			<th>Time to Hire</th>
+	    			<td><span id="th"></span></td>
+	    		</tr>
+	    	</table>
+	    </td>	    
+	  </tr>
+	</table>
+	<script type="text/javascript">			
+		function HireCalc(example, ctv, ahv, ncv){
+			document.getElementById(example).onkeyup = function(){
+				var a = Number(document.getElementById(ctv).value);
+				var b = Number(document.getElementById(ahv).value);
+				var c = Number(document.getElementById(ncv).value);					
+				var x = (b*c);
+				var	r = ((x*30)+(x*20)+(x*30)*(0.66*((1-(Math.pow(0.66,3)))/(1-0.66)))+(x*30)+15*(x)*(0.66*((1-(Math.pow(0.66,3)))/(1-0.66))+(x*30)))/60;
+				var p = ((x*55)*(x*15)*(0.66))/60;
+
+				document.getElementById('tps').innerHTML = p.toFixed(2)+" Hours";
+
+				document.getElementById('tpcs').innerHTML = "$"+(p *40).toFixed(2)+" USD";		
+
+				document.getElementById('trts').innerHTML = r.toFixed(2)+" Hours";
+
+				document.getElementById('trcs').innerHTML = "$"+(r*30).toFixed(2)+" USD";
+
+				document.getElementById('th').innerHTML = (a*(40/100)).toFixed(2)+" Days";	
+			}
+		}
+		HireCalc("calcForm", "ct", "ah", "nc");
+	</script>
+</body>
+</html>
+
+
+
+
