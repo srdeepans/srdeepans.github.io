@@ -1,0 +1,198 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto);
+@import url(leaflet.css);
+@import url(bootstrap.min.css);
+@import url(https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css);
+body,
+input,
+body * {
+  font-family: 'Roboto', sans-serif;
+  box-sizing: border-box;
+}
+body::after, body::before,
+input::after,
+input::before,
+body *::after,
+body *::before {
+  box-sizing: border-box;
+}
+
+body {
+  background-image: -webkit-linear-gradient(top, #f2f2f2, #e6e6e6);
+  background-image: linear-gradient(top, #f2f2f2, #e6e6e6);
+  font-family: Arial, sans-serif;
+  color: #000000;
+}
+
+.container-main {
+  position: relative;
+  max-width: 40rem;
+  margin: 5rem auto 1.3rem;
+  background: #fff;
+  width: 380px!important;
+  padding: 7.5rem 2rem 2rem;
+  border-radius: 1px;
+}
+
+.container-main::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  box-shadow: 0 8px 10px 1px rgba(0, 0, 0, 0.14), 0 3px 14px 2px rgba(0, 0, 0, 0.12), 0 5px 5px -3px rgba(0, 0, 0, 0.2);
+  transform: scale(0.98);
+  transition: transform 0.28s ease-in-out;
+  z-index: -1;
+}
+.container-main h1{
+    font-size: 24px;
+    line-height: 1.2;
+    font-weight: bolder;
+}
+
+.login-body {
+  display: flex;
+  justify-content: right;
+  align-items: center;
+  height: 100vh;
+  background: url("../assets/background.webp") center center / cover no-repeat;
+  background-color: #40191b;
+}
+
+.login-body main {
+  padding-right: 15%;
+}
+
+.login-container-main {
+  width: 100%;
+  max-width: 400px;
+  padding: 15px;
+}
+
+.login-box {
+  background: white;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+form{
+    padding-top: 1.5rem;
+}
+.form-group {
+    position: relative;
+    margin-top: 2.25rem;
+    margin-bottom: 2.25rem;
+  }
+  
+  .form-help {
+    margin-top: 0.125rem;
+    margin-left: 0.125rem;
+    color: #b3b3b3;
+    font-size: 0.8rem;
+  }
+  
+  .form-group input {
+    height: 1.9rem;
+    display: block;
+    background: none;
+    padding: 0.125rem 0.125rem 0.0625rem;
+    font-size: 0.8rem;
+    border-width: 0;
+    border-color: transparent;
+    line-height: 1.9;
+    width: 100%;
+    color: transparent;
+    transition: all 0.28s ease;
+    box-shadow: none;
+  }
+  
+  .form-group .control-label {
+    position: absolute;
+    top: 0.25rem;
+    pointer-events: none;
+    padding-left: 0.125rem;
+    z-index: 1;
+    color: #b3b3b3;
+    font-size: 0.9rem;
+    font-weight: normal;
+    transition: all 0.28s ease;
+  }
+  
+  .form-group .bar {
+    position: relative;
+    border-bottom: 0.0625rem solid #999;
+    display: block;
+  }
+  
+  .form-group .bar::before {
+    content: '';
+    height: 0.125rem;
+    width: 0;
+    left: 50%;
+    bottom: -0.0625rem;
+    position: absolute;
+    background: #337ab7;
+    transition: left 0.28s ease, width 0.28s ease;
+    z-index: 2;
+  }
+  
+  .form-group input:focus,
+  .form-group input:valid,
+  .form-group input.has-value {
+    color: #000000;
+  }
+  
+  .form-group input:focus ~ .control-label,
+  .form-group input:valid ~ .control-label,
+  .form-group input.has-value ~ .control-label {
+    font-size: 0.7rem;
+    color: #000000;
+    top: -1.1rem;
+    left: 0;
+  }
+  
+  .form-group input:focus {
+    outline: none;
+    border-bottom: 1px solid #000000!important;
+  }
+  
+  .form-group input:focus ~ .control-label {
+    color: #000000;
+  }
+  
+  .form-group input:focus ~ .bar::before {
+    width: 100%;
+    left: 0;
+    border-bottom: 1px solid #000000!important;
+  }
+  
+.eye-icon {
+    float: right;
+    margin-right: 10px;
+    margin-top: -30px;
+    position: relative;
+    z-index: 2;
+    cursor: pointer;
+    color: #aaa;
+}
+form a{
+    font-size: 0.7rem;
+    color: #000000;
+    text-decoration: none;
+}
+.btn-block{
+    float: right;
+    border-radius: 0px!important;
+    background-color: #000000!important;
+    border-color: #000000!important;
+    font-size: 0.8rem!important;
+    padding: 0.7rem 2rem!important;
+}
+.form-foot{
+    padding: 5px 0 15px;
+}
+.register{    
+    color: #cccccc;
+    font-size: 0.8rem!important;
+}
